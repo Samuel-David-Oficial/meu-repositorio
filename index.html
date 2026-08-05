@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samuel David | Portfólio & Formação Acadêmica</title>
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Fonte do Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR (HEADER) -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="logo">SamuelDavid<span>.dev</span></a>
+
+      <!-- Links de Navegação Principal -->
+      <nav class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#curriculo">Currículo</a>
+        <a href="#graduacoes">Graduações</a>
+        <a href="#certificados">Certificados</a>
+      </nav>
+
+      <!-- BOTÃO DE OPÇÕES COM MENU DROPDOWN -->
+      <div class="options-wrapper">
+        <button id="options-btn" class="btn-options" aria-expanded="false" aria-label="Abrir menu de opções">
+          <span>Opções</span>
+          <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+
+        <!-- Menu de Opções Suspenso -->
+        <div id="options-menu" class="options-dropdown" aria-hidden="true">
+          <button id="theme-toggle" class="dropdown-item">
+            <span class="icon">🌙</span>
+            <span class="label">Alternar Tema</span>
+          </button>
+          <a href="https://drive.google.com/file/d/1HB506L9kJZMqzW-H2jZrOWSba0NR7duv/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+            <span class="icon">📄</span>
+            <span class="label">Baixar CV em PDF</span>
+          </a>
+          <a href="#contato" class="dropdown-item">
+            <span class="icon">✉️</span>
+            <span class="label">Contato Rápido</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL (CENTRALIZADO COM MARGENS LATERAIS) -->
+  <main class="container">
+
+    <!-- HERO SECTION / SOBRE -->
+    <section id="sobre" class="section hero">
+      <div class="hero-card">
+        <div class="avatar-wrapper">
+          <img src="https://via.placeholder.com/120" alt="Sua Foto de Perfil" class="avatar">
+        </div>
+        <div class="hero-info">
+          <span class="badge-status">Graduando & Pesquisador</span>
+          <h1>Olá, me chamo <span class="highlight">[Seu Nome]</span></h1>
+          <p class="description">
+            Seja bem-vindo ao meu portfólio acadêmico. Aqui centralizo minhas graduações, certificações e currículo diretamente integrados ao Google Drive.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO CURRÍCULO (GOOGLE DRIVE) -->
+    <section id="curriculo" class="section">
+      <div class="section-header">
+        <h2>Currículo Atualizado</h2>
+        <p>Documento sincronizado diretamente com o Google Drive.</p>
+      </div>
+
+      <div class="drive-frame-card">
+        <iframe 
+          src="https://drive.google.com/file/d/1HB506L9kJZMqzW-H2jZrOWSba0NR7duv/view?usp=drive_link" 
+          title="Currículo Vitae"
+          width="100%" 
+          height="520" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- SEÇÃO GRADUAÇÕES -->
+    <section id="graduacoes" class="section">
+      <div class="section-header">
+        <h2>Graduações & Formação</h2>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-tag">Bacharelado</div>
+          <h3>Ciência da Computação</h3>
+          <p class="institution">Universidade Federal / Estadual • 2021 - 2025</p>
+          <p class="card-text">Foco em Estruturas de Dados, Engenharia de Software e Desenvolvimento Web.</p>
+          <button class="btn-card btn-view-drive" data-drive-id="ID_DO_DIPLOMA_1" data-title="Diploma - Ciência da Computação">
+            👁️ Visualizar Comprovante
+          </button>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">Especialização</div>
+          <h3>Pós-Graduação em Sistemas Web</h3>
+          <p class="institution">Instituto Tecnológico • 2025 - Presente</p>
+          <p class="card-text">Aprofundamento em arquitetura de microsserviços, segurança e performance.</p>
+          <button class="btn-card btn-view-drive" data-drive-id="ID_DO_DIPLOMA_2" data-title="Comprovante de Matrícula/Especialização">
+            👁️ Visualizar Comprovante
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEÇÃO CERTIFICADOS -->
+    <section id="certificados" class="section">
+      <div class="section-header">
+        <h2>Certificações</h2>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card small">
+          <h3>Desenvolvimento Web Moderno</h3>
+          <p class="institution">Plataforma EAD • 80 horas</p>
+          <button class="btn-card btn-view-drive" data-drive-id="ID_DO_CERTIFICADO_1" data-title="Certificado Dev Web">
+            Ver Certificado
+          </button>
+        </article>
+
+        <article class="card small">
+          <h3>Estruturas de Dados e Algoritmos</h3>
+          <p class="institution">Curso Livre • 60 horas</p>
+          <button class="btn-card btn-view-drive" data-drive-id="ID_DO_CERTIFICADO_2" data-title="Certificado Algoritmos">
+            Ver Certificado
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO -->
+    <section id="contato" class="section footer-contact">
+      <div class="contact-box">
+        <h2>Entre em Contato</h2>
+        <p>Estou aberto a oportunidades profissionais, projetos e networking.</p>
+        <div class="contact-buttons">
+          <a href="mailto:seuemail@exemplo.com" class="btn-primary">Enviar E-mail</a>
+          <a href="https://linkedin.com" target="_blank" class="btn-secondary">LinkedIn</a>
+          <a href="https://github.com" target="_blank" class="btn-secondary">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; 2026 [Seu Nome]. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- MODAL PARA EXIBIR DOCUMENTOS DO GOOGLE DRIVE -->
+  <dialog id="drive-modal" class="modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title">Documento</h3>
+        <button id="modal-close" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="modal-iframe" src="" title="Visualizador do Drive" width="100%" height="480" frameborder="0"></iframe>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
