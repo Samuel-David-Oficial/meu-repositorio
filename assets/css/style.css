@@ -453,3 +453,29 @@ body {
     padding: 1.75rem;
   }
 }
+
+/* Transição suave em todos os elementos principais ao trocar de tema (para modo dark)*/
+body, 
+.navbar, 
+.hero-card, 
+.card, 
+.cv-card-preview, 
+.contact-box, 
+.modal-card, 
+.btn-theme-toggle {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ajuste do fundo da miniatura do currículo para combinar com o tema */
+.cv-thumbnail-wrapper {
+  background-color: var(--border-color);
+}
+
+/* Estilização do backdrop (fundo escurecido) do modal no Dark Mode */
+[data-theme="dark"] .modal::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="dark"] .cv-overlay {
+  background: rgba(11, 15, 23, 0.7);
+}
