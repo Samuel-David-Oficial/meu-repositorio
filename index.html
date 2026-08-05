@@ -26,33 +26,13 @@
         <a href="#curriculo">Currículo</a>
         <a href="#graduacoes">Graduações</a>
         <a href="#certificados">Certificados</a>
+        <a href="#contato">Contato</a>
       </nav>
 
-      <!-- BOTÃO DE OPÇÕES COM MENU DROPDOWN -->
-      <div class="options-wrapper">
-        <button id="options-btn" class="btn-options" aria-expanded="false" aria-label="Abrir menu de opções">
-          <span>Opções</span>
-          <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="m6 9 6 6 6-6"/>
-          </svg>
-        </button>
-
-        <!-- Menu de Opções Suspenso -->
-        <div id="options-menu" class="options-dropdown" aria-hidden="true">
-          <button id="theme-toggle" class="dropdown-item">
-            <span class="icon">🌙</span>
-            <span class="label">Alternar Tema</span>
-          </button>
-          <a href="https://drive.google.com/file/d/1HB506L9kJZMqzW-H2jZrOWSba0NR7duv/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="dropdown-item">
-            <span class="icon">📄</span>
-            <span class="label">Baixar CV em PDF</span>
-          </a>
-          <a href="#contato" class="dropdown-item">
-            <span class="icon">✉️</span>
-            <span class="label">Contato Rápido</span>
-          </a>
-        </div>
-      </div>
+      <!-- BOTÃO DIRETO PARA ALTERNAR TEMA -->
+      <button id="theme-toggle" class="btn-theme-toggle" aria-label="Alternar Tema Claro/Escuro" title="Alternar Tema">
+        <span class="theme-icon">🌙</span>
+      </button>
 
     </div>
   </header>
@@ -68,7 +48,7 @@
         </div>
         <div class="hero-info">
           <span class="badge-status">Graduando & Pesquisador</span>
-          <h1>Olá, me chamo <span class="highlight">[Seu Nome]</span></h1>
+          <h1>Olá, me chamo <span class="highlight">Samuel David</span></h1>
           <p class="description">
             Seja bem-vindo ao meu portfólio acadêmico. Aqui centralizo minhas graduações, certificações e currículo diretamente integrados ao Google Drive.
           </p>
@@ -80,7 +60,6 @@
     <section id="curriculo" class="section">
       <div class="section-header">
         <h2>Currículo Atualizado</h2>
-        <p>Documento sincronizado diretamente com o Google Drive.</p>
       </div>
 
       <div class="drive-frame-card">
@@ -104,7 +83,7 @@
         <article class="card">
           <div class="card-tag">Bacharelado</div>
           <h3>Ciência da Computação</h3>
-          <p class="institution">Universidade Federal / Estadual • 2021 - 2025</p>
+          <p class="institution">Universidade Unipê / Campus • 2024 - 2027</p>
           <p class="card-text">Foco em Estruturas de Dados, Engenharia de Software e Desenvolvimento Web.</p>
           <button class="btn-card btn-view-drive" data-drive-id="ID_DO_DIPLOMA_1" data-title="Diploma - Ciência da Computação">
             👁️ Visualizar Comprovante
@@ -156,7 +135,7 @@
         <div class="contact-buttons">
           <a href="mailto:seuemail@exemplo.com" class="btn-primary">Enviar E-mail</a>
           <a href="https://linkedin.com" target="_blank" class="btn-secondary">LinkedIn</a>
-          <a href="https://github.com" target="_blank" class="btn-secondary">GitHub</a>
+          <a href="https://github.com/samergameplay" target="_blank" class="btn-secondary">GitHub</a>
         </div>
       </div>
     </section>
@@ -164,7 +143,7 @@
   </main>
 
   <footer class="main-footer">
-    <p>&copy; 2026 [Seu Nome]. Todos os direitos reservados.</p>
+    <p>&copy; 2026 Samuel David. Todos os direitos reservados.</p>
   </footer>
 
   <!-- MODAL PARA EXIBIR DOCUMENTOS DO GOOGLE DRIVE -->
