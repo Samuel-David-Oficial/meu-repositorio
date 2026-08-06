@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. VARIÁVEIS DO TEMA (DESIGN SYSTEM)
-   ========================================================================== */
+1. VARIÁVEIS DO TEMA (DESIGN SYSTEM)
 :root {
   /* Paleta Clara (Light) */
   --bg-body: #f8fafc;
@@ -19,10 +17,13 @@
   --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
   --shadow-lg: 0 12px 28px rgba(0,0,0,0.12);
 
-  --max-width: 1040px; /* Largura máxima centralizada */
+  --max-width: 1040px;
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
+
+  /* Transição padrão para troca de tema */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Paleta Escura (Dark Mode) */
@@ -62,15 +63,14 @@ body {
   background-color: var(--bg-body);
   color: var(--text-primary);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: var(--theme-transition);
 }
 
-/* CONTAINER CENTRALIZADO COM ESPAÇAMENTO LATERAL */
 .container {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.5rem; /* Margem interna para telas menores */
+  padding: 0 1.5rem;
 }
 
 .section {
@@ -103,7 +103,7 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   padding: 0.85rem 0;
-  transition: background-color 0.3s ease;
+  transition: var(--theme-transition);
 }
 
 .nav-content {
@@ -158,7 +158,7 @@ body {
   font-size: 0.9rem;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
-  transition: all 0.2s ease;
+  transition: var(--theme-transition);
 }
 
 .btn-options:hover {
@@ -184,12 +184,10 @@ body {
   border-radius: var(--radius-md);
   padding: 0.5rem;
   box-shadow: var(--shadow-lg);
-  
-  /* Animação do dropdown */
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease, var(--theme-transition);
   z-index: 110;
 }
 
@@ -214,7 +212,7 @@ body {
   border-radius: var(--radius-sm);
   cursor: pointer;
   text-align: left;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .dropdown-item:hover {
@@ -234,6 +232,7 @@ body {
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   box-shadow: var(--shadow-md);
+  transition: var(--theme-transition);
 }
 
 .avatar {
@@ -275,7 +274,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Inclui transform e as transições do tema sem sobrescrever nenhuma */
+  transition: transform 0.2s ease, var(--theme-transition);
 }
 
 .card:hover {
@@ -310,7 +310,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* BOTÕES DOS CARDS */
+/* BOTÕES DOS CARDS (Corrigido o conflito com button interno) */
 .btn-card {
   background-color: var(--accent-light);
   color: var(--accent-color);
@@ -322,11 +322,7 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   width: 100%;
-
-}
-
-.btn-card button{
-  color: var(--text-primary);
+  text-align: center;
 }
 
 .btn-card:hover {
@@ -335,7 +331,7 @@ body {
 }
 
 /* ==========================================================================
-   5. CONTATO & MODAL
+   5. CONTATO, MODAL & COMPONENTES ADICIONAIS
    ========================================================================== */
 .contact-box {
   background-color: var(--bg-card);
@@ -344,6 +340,7 @@ body {
   padding: 3rem 2rem;
   text-align: center;
   box-shadow: var(--shadow-md);
+  transition: var(--theme-transition);
 }
 
 .contact-buttons {
@@ -408,12 +405,17 @@ body {
   backdrop-filter: blur(4px);
 }
 
+[data-theme="dark"] .modal::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .modal-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+  transition: var(--theme-transition);
 }
 
 .modal-header {
@@ -432,15 +434,28 @@ body {
   cursor: pointer;
 }
 
-/* RESPONSIVIDADE (MOBILE) */
-/* Container para alinhar o botão de tema e o botão de menu */
+/* PREVIEW DO CURRÍCULO (COMPONENTE CV) */
+.cv-card-preview {
+  transition: var(--theme-transition);
+}
+
+.cv-thumbnail-wrapper {
+  background-color: var(--border-color);
+}
+
+.cv-overlay {
+  background: rgba(11, 15, 23, 0.7);
+}
+
+/* ==========================================================================
+   6. RESPONSIVIDADE (MOBILE)
+   ========================================================================== */
 .header-actions {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-/* Estilo base do botão de menu (Oculto em telas grandes) */
 .btn-menu {
   display: none;
   background-color: var(--bg-card);
@@ -458,24 +473,20 @@ body {
   color: var(--accent-color);
 }
 
-/* RESPONSIVIDADE (Telas até 770px) */
 @media (max-width: 770px) {
-  /* Mostra o botão de menu */
   .btn-menu {
     display: block;
   }
 
-  /* Ajustes da seção Hero */
   .hero-card {
     flex-direction: column;
     text-align: center;
     padding: 1.75rem;
   }
 
-  /* Transforma a Nav em um Menu Dropdown Oculto por padrão */
   .nav-links {
     position: absolute;
-    top: 100%; /* Fica exatamente abaixo do header */
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: var(--bg-navbar);
@@ -486,8 +497,6 @@ body {
     align-items: center;
     padding: 1.5rem 0;
     gap: 1.5rem;
-    
-    /* Animação de esconder/mostrar */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-15px);
@@ -495,36 +504,9 @@ body {
     box-shadow: var(--shadow-md);
   }
 
-  /* Classe que será adicionada pelo JavaScript para mostrar o menu */
   .nav-links.active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
-}
-
-/* Transição suave em todos os elementos principais ao trocar de tema (para modo dark)*/
-body, 
-.navbar, 
-.hero-card, 
-.card, 
-.cv-card-preview, 
-.contact-box, 
-.modal-card, 
-.btn-theme-toggle {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Ajuste do fundo da miniatura do currículo para combinar com o tema */
-.cv-thumbnail-wrapper {
-  background-color: var(--border-color);
-}
-
-/* Estilização do backdrop (fundo escurecido) do modal no Dark Mode */
-[data-theme="dark"] .modal::backdrop {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-[data-theme="dark"] .cv-overlay {
-  background: rgba(11, 15, 23, 0.7);
 }
