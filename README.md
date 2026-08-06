@@ -1,9 +1,9 @@
 # meu-repositorio
-🎓 Portfólio Acadêmico & Profissional — Samuel David
+## 🎓 Portfólio Acadêmico & Profissional — Samuel David
 
 Bem-vindo ao repositório do meu portfólio pessoal e acadêmico! Este projeto foi desenvolvido com o objetivo de centralizar minha trajetória acadêmica, certificações institucionais e externas, currículo e canais de contato em uma interface moderna, responsiva e performática.
 
-🎯 Objetivo do Projeto
+## 🎯 Objetivo do Projeto
 
 O objetivo principal deste site é servir como um hub central de qualificações. Ele permite que recrutadores, professores e parceiros de projetos visualizem rapidamente minhas experiências e acessem documentos comprobatórios (certificados, diplomas e currículo) diretamente na página, sem a necessidade de downloads manuais ou navegação fora do site.
 ✨ Funcionalidades Principais
@@ -20,7 +20,8 @@ O objetivo principal deste site é servir como um hub central de qualificações
 
         Modal interativo desenvolvido com a tag HTML5 <dialog>.
 
-        Transforma links de visualização do Google Drive em previews embutidos via iframe, permitindo a leitura de certificados e do currículo dentro da própria plataforma.
+        Transforma links de visualização do Google Drive em previews embutidos via iframe, 
+        permitindo a leitura de certificados e do currículo dentro da própria plataforma.
 
         Fechamento simplificado ao clicar no botão de fechar, apertar a tecla ESC ou clicar fora da área do documento.
 
@@ -34,7 +35,7 @@ O objetivo principal deste site é servir como um hub central de qualificações
 
         Rolagem suave (scroll-behavior: smooth) para atalhos diretos entre seções.
 
-🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 O projeto foi construído utilizando tecnologias nativas (Vanilla Web Stack), garantindo leveza, alta velocidade de carregamento e facilidade de manutenção:
 
@@ -62,16 +63,20 @@ meu-repositorio/
         └── icon_foto.jpeg # Imagem de perfil do autor
 ```
 
-🔧 Como Executar o Projeto Localmente
+## 🔧 Como Executar o Projeto Localmente
 
     1. Clone o repositório:
 
+    ```text
     git clone https://github.com/samergameplay/portfolio.git
+    ```
 
     2. Acesse a pasta do projeto:
 
+    ```text
     cd portfolio
-
+    ```
+    
     3. Abra o projeto:
 
     Basta dar um duplo clique no arquivo index.html ou utilizar uma extensão como o Live Server no VS Code.
