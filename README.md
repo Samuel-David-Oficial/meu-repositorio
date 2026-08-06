@@ -37,9 +37,9 @@ O objetivo principal deste site é servir como um hub central de qualificações
 ## 🛠️ Tecnologias Utilizadas
 
 O projeto foi construído utilizando tecnologias nativas (Vanilla Web Stack), garantindo leveza, alta velocidade de carregamento e facilidade de manutenção:
-```text
-• HTML5 - Estruturação semântica (<header>, <main>, <section>, <article>, <dialog>).
-```
+
+• HTML5 - Estruturação semântica (header, main, section, article, dialog).
+
 • CSS3 - Estilização moderna com Variáveis CSS (Design System), CSS Grid, Flexbox e Backdrop Filter.
 
 • JavaScript (ES6+) - Manipulação dinâmica do DOM, gestão de eventos, manipulação de modal e persistência de tema.
@@ -65,15 +65,15 @@ meu-repositorio/
 ## 🔧 Como Executar o Projeto Localmente
 
 1. Clone o repositório:
-
+```text
     git clone https://github.com/samergameplay/portfolio.git
-
+```
 2. Acesse a pasta do projeto:
-
+```text
     cd portfolio
-
+```
 3. Abra o projeto:
 
 Basta dar um duplo clique no arquivo index.html ou utilizar uma extensão como o Live Server no VS Code.
 
-Desenvolvido por Samuel David © 2026. Todos os direitos reservados.
+• Desenvolvido por Samuel David © 2026. Todos os direitos reservados.
