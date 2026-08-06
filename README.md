@@ -1,4 +1,3 @@
-# meu-repositorio
 ## 🎓 Portfólio Acadêmico & Profissional — Samuel David
 
 Bem-vindo ao repositório do meu portfólio pessoal e acadêmico! Este projeto foi desenvolvido com o objetivo de centralizar minha trajetória acadêmica, certificações institucionais e externas, currículo e canais de contato em uma interface moderna, responsiva e performática.
@@ -6,34 +5,35 @@ Bem-vindo ao repositório do meu portfólio pessoal e acadêmico! Este projeto f
 ## 🎯 Objetivo do Projeto
 
 O objetivo principal deste site é servir como um hub central de qualificações. Ele permite que recrutadores, professores e parceiros de projetos visualizem rapidamente minhas experiências e acessem documentos comprobatórios (certificados, diplomas e currículo) diretamente na página, sem a necessidade de downloads manuais ou navegação fora do site.
-✨ Funcionalidades Principais
 
-    🌗 Alternância de Tema (Dark / Light Mode):
+## ✨ Funcionalidades Principais
 
-        Suporte nativo a modo claro e escuro com transição suave.
+🌗 Alternância de Tema (Dark / Light Mode):
 
-        Salva a preferência do usuário no localStorage.
+    Suporte nativo a modo claro e escuro com transição suave.
 
-        Detecta automaticamente a preferência do sistema operacional (prefers-color-scheme).
+    Salva a preferência do usuário no localStorage.
 
-    📄 Visualizador de Documentos Nativo (Google Drive Preview):
+    Detecta automaticamente a preferência do sistema operacional (prefers-color-scheme).
 
-        Modal interativo desenvolvido com a tag HTML5 <dialog>.
+📄 Visualizador de Documentos Nativo (Google Drive Preview):
 
-        Transforma links de visualização do Google Drive em previews embutidos via iframe, 
-        permitindo a leitura de certificados e do currículo dentro da própria plataforma.
+    Modal interativo desenvolvido com a tag HTML5 <dialog>.
 
-        Fechamento simplificado ao clicar no botão de fechar, apertar a tecla ESC ou clicar fora da área do documento.
+    Transforma links de visualização do Google Drive em previews embutidos via iframe, 
+    permitindo a leitura de certificados e do currículo dentro da própria plataforma.
 
-    📱 Design Responsivo & Mobile First:
+    Fechamento simplificado ao clicar no botão de fechar, apertar a tecla ESC ou clicar fora da área do documento.
 
-        Layout flexível adaptado para dispositivos móveis, tablets e desktops.
+📱 Design Responsivo & Mobile First:
 
-        Menu retrátil tipo hambúrguer para telas pequenas.
+    Layout flexível adaptado para dispositivos móveis, tablets e desktops.
 
-    🚀 Navegação Fluida:
+    Menu retrátil tipo hambúrguer para telas pequenas.
 
-        Rolagem suave (scroll-behavior: smooth) para atalhos diretos entre seções.
+🚀 Navegação Fluida:
+
+    Rolagem suave (scroll-behavior: smooth) para atalhos diretos entre seções.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -65,20 +65,16 @@ meu-repositorio/
 
 ## 🔧 Como Executar o Projeto Localmente
 
-    1. Clone o repositório:
+1. Clone o repositório:
 
-    ```text
     git clone https://github.com/samergameplay/portfolio.git
-    ```
 
-    2. Acesse a pasta do projeto:
+2. Acesse a pasta do projeto:
 
-    ```text
     cd portfolio
-    ```
-    
-    3. Abra o projeto:
 
-    Basta dar um duplo clique no arquivo index.html ou utilizar uma extensão como o Live Server no VS Code.
+3. Abra o projeto:
+
+Basta dar um duplo clique no arquivo index.html ou utilizar uma extensão como o Live Server no VS Code.
 
 Desenvolvido por Samuel David © 2026. Todos os direitos reservados.
