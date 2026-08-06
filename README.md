@@ -48,9 +48,10 @@ O projeto foi construído utilizando tecnologias nativas (Vanilla Web Stack), ga
 
 • Google Drive Viewer - Integração de exibição em tempo real de documentos em PDF/Drive.
 
-📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
-meu-repositorio
+```text
+meu-repositorio/
 ├── index.html             # Estrutura principal da página
 └── assets/
     ├── css/
@@ -59,6 +60,7 @@ meu-repositorio
     │   └── main.js        # Lógica de alternância de tema, modal e menu mobile
     └── images/
         └── icon_foto.jpeg # Imagem de perfil do autor
+```
 
 🔧 Como Executar o Projeto Localmente
 
