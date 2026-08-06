@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (themeIcon) {
       // Exibe o Sol ☀️ no modo escuro e a Lua 🌙 no modo claro
-      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      themeIcon.textContent = theme === 'dark' ? 'Claro' : 'Escuro';
     }
   };
 
@@ -97,5 +97,33 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeModal() {
     modal.close();
     modalIframe.src = ''; // Interrompe o carregamento do documento em segundo plano
+  }
+/* ==========================================================================
+     3. LÓGICA DO MENU MOBILE (HAMBÚRGUER)
+     ========================================================================== */
+  const menuToggleBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  if (menuToggleBtn && navLinks) {
+    // Abre/Fecha o menu ao clicar no botão
+    menuToggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      
+      // Altera o ícone do botão dependendo do estado do menu
+      if (navLinks.classList.contains('active')) {
+        menuToggleBtn.innerHTML = '✖'; // Ícone de Fechar
+      } else {
+        menuToggleBtn.innerHTML = '☰'; // Ícone de Hambúrguer
+      }
+    });
+
+    // Fecha o menu automaticamente quando um link é clicado
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggleBtn.innerHTML = '☰';
+      });
+    });
   }
 });

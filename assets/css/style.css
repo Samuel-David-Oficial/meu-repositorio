@@ -322,25 +322,16 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   width: 100%;
+
+}
+
+.btn-card button{
+  color: var(--text-primary);
 }
 
 .btn-card:hover {
   background-color: var(--accent-color);
   color: #ffffff;
-}
-
-/* DRIVE FRAME */
-.drive-frame-card {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-
-.drive-frame-card iframe {
-  border: none;
-  display: block;
 }
 
 /* ==========================================================================
@@ -442,15 +433,73 @@ body {
 }
 
 /* RESPONSIVIDADE (MOBILE) */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none; /* Em telas muito pequenas oculta links do menu principal se desejar */
+/* Container para alinhar o botão de tema e o botão de menu */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Estilo base do botão de menu (Oculto em telas grandes) */
+.btn-menu {
+  display: none;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-menu:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* RESPONSIVIDADE (Telas até 770px) */
+@media (max-width: 770px) {
+  /* Mostra o botão de menu */
+  .btn-menu {
+    display: block;
   }
 
+  /* Ajustes da seção Hero */
   .hero-card {
     flex-direction: column;
     text-align: center;
     padding: 1.75rem;
+  }
+
+  /* Transforma a Nav em um Menu Dropdown Oculto por padrão */
+  .nav-links {
+    position: absolute;
+    top: 100%; /* Fica exatamente abaixo do header */
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-navbar);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    gap: 1.5rem;
+    
+    /* Animação de esconder/mostrar */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Classe que será adicionada pelo JavaScript para mostrar o menu */
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 }
 
@@ -463,7 +512,7 @@ body,
 .contact-box, 
 .modal-card, 
 .btn-theme-toggle {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Ajuste do fundo da miniatura do currículo para combinar com o tema */

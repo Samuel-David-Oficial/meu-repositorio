@@ -16,23 +16,32 @@
 <body>
 
   <!-- BARRA SUPERIOR (HEADER) -->
+  <!-- BARRA SUPERIOR (HEADER) -->
   <header class="navbar">
     <div class="container nav-content">
       <a href="#" class="logo">SamuelDavid<span>.dev</span></a>
 
       <!-- Links de Navegação Principal -->
-      <nav class="nav-links">
+      <nav class="nav-links" id="nav-links">
         <a href="#sobre">Sobre</a>
         <a href="#curriculo">Currículo</a>
         <a href="#graduacoes">Graduações</a>
-        <a href="#certificados">Certificados</a>
+        <a href="#certificados_inst.">Certificados</a>
         <a href="#contato">Contato</a>
       </nav>
 
-      <!-- BOTÃO DIRETO PARA ALTERNAR TEMA -->
-      <button id="theme-toggle" class="btn-theme-toggle" aria-label="Alternar Tema Claro/Escuro" title="Alternar Tema">
-        <span class="theme-icon"></span>
-      </button>
+      <!-- BOTÕES DO HEADER -->
+      <div class="header-actions">
+        <!-- BOTÃO DIRETO PARA ALTERNAR TEMA -->
+        <button id="theme-toggle" class="btn-theme-toggle" aria-label="Alternar Tema Claro/Escuro" title="Alternar Tema">
+          <span class="theme-icon"></span>
+        </button>
+
+        <!-- BOTÃO DO MENU MOBILE (Oculto no Desktop) -->
+        <button id="menu-toggle" class="btn-menu" aria-label="Abrir Menu">
+          ☰
+        </button>
+      </div>
 
     </div>
   </header>
@@ -59,17 +68,17 @@
     <!-- SEÇÃO CURRÍCULO (GOOGLE DRIVE) -->
     <section id="curriculo" class="section">
       <div class="section-header">
-        <h2>Currículo Atualizado</h2>
+        <h2>Resumo Profissional</h2>
       </div>
 
       <div class="drive-frame-card">
-        <iframe 
-          src="https://drive.google.com/file/d/1HB506L9kJZMqzW-H2jZrOWSba0NR7duv/view?usp=drive_link" 
-          title="Currículo Vitae"
-          width="100%" 
-          height="520" 
-          loading="lazy">
-        </iframe>
+        <article class="card">
+          <h3>Currículo</h3>
+          <p class="card-text">Foco em Estruturas de Dados, Engenharia de Software e Desenvolvimento Web.</p>
+          <button class="btn-card btn-view-drive" data-drive-id="https://drive.google.com/file/d/1HB506L9kJZMqzW-H2jZrOWSba0NR7duv/view" data-title="Diploma - Ciência da Computação">
+            👁️ Visualizar 
+          </button>
+        </article>
       </div>
     </section>
 
@@ -84,36 +93,38 @@
           <div class="card-tag">Bacharelado</div>
           <h3>Ciência da Computação</h3>
           <p class="institution">Universidade Unipê / Campus • 2024 - 2027</p>
-          <p class="card-text">Foco em Estruturas de Dados, Engenharia de Software e Desenvolvimento Web.</p>
-          <button class="btn-card btn-view-drive" data-drive-id="ID_DO_DIPLOMA_1" data-title="Diploma - Ciência da Computação">
-            👁️ Visualizar Comprovante
+          <p class="card-text">Foco em estudar a base matemática, lógica e teórica necessária para criar programas, 
+            como funciona as máquinas e resolver problemas complexos com tecnologia.</p>
+          <p>AINDA NÃO DISPONÍVEL !</p>
+          <button class="btn-card btn-view-drive" data-drive-id="ID_DO_DIPLOMA_1" data-title="Currículo">
+            👁️ Visualizar 
           </button>
         </article>
 
         <article class="card">
-          <div class="card-tag">Especialização</div>
-          <h3>Pós-Graduação em Sistemas Web</h3>
-          <p class="institution">Instituto Tecnológico • 2025 - Presente</p>
-          <p class="card-text">Aprofundamento em arquitetura de microsserviços, segurança e performance.</p>
-          <button class="btn-card btn-view-drive" data-drive-id="ID_DO_DIPLOMA_2" data-title="Comprovante de Matrícula/Especialização">
-            👁️ Visualizar Comprovante
+          <div class="card-tag">Formação</div>
+          <h3>Renovação de Energia Renováveis</h3>
+          <p class="institution">IFPB • 2024 - Presente</p>
+          <p class="card-text">Curso de Formação Inicial e Continuada em Eletricista de Sistemas de Energias Renováveis.</p>
+          <button class="btn-card btn-view-drive" data-drive-id="https://drive.google.com/file/d/1cG16XNlKk7NgQmN2JEJdzG10KYDfeqFt/view" data-title="Comprovante de Matrícula/Especialização">
+            👁️ Visualizar
           </button>
         </article>  
       </div>
     </section>
 
-    <!-- SEÇÃO CERTIFICADOS -->
-    <section id="certificados" class="section">
+    <!-- SEÇÃO CERTIFICADOS INSTITUCIONAIS-->
+    <section id="certificados_inst." class="section">
       <div class="section-header">
-        <h2>Certificações</h2>
+        <h2>Certificações Institucionais</h2>
       </div>
 
       <div class="cards-grid">
         <article class="card small">
-          <h3>Desenvolvimento Web Moderno</h3>
-          <p class="institution">Plataforma EAD • 80 horas</p>
-          <button class="btn-card btn-view-drive" data-drive-id="ID_DO_CERTIFICADO_1" data-title="Certificado Dev Web">
-            Ver Certificado
+          <h3>Introdução ao Microsoft 365</h3>
+          <p class="institution">Plataforma EAD • 20 horas</p>
+          <button class="btn-card btn-view-drive" data-drive-id="https://drive.google.com/file/d/1Xyl_43Getp-i8iw-aS9Bo-KSx2OajyIJ/view" data-title="Certificado Dev Web">
+            👁️ Visualizar
           </button>
         </article>
 
@@ -121,7 +132,32 @@
           <h3>Estruturas de Dados e Algoritmos</h3>
           <p class="institution">Curso Livre • 60 horas</p>
           <button class="btn-card btn-view-drive" data-drive-id="ID_DO_CERTIFICADO_2" data-title="Certificado Algoritmos">
-            Ver Certificado
+            👁️ Visualizar
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEÇÃO CERTIFICADOS EXTERNOS-->
+    <section id="certificados_ext." class="section">
+      <div class="section-header">
+        <h2>Certificações Externos</h2>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card small">
+          <h3>Introdução ao Microsoft 365</h3>
+          <p class="institution">Plataforma EAD • 80 horas</p>
+          <button class="btn-card btn-view-drive" data-drive-id="https://drive.google.com/file/d/1Xyl_43Getp-i8iw-aS9Bo-KSx2OajyIJ/view" data-title="Certificado Dev Web">
+            👁️ Visualizar
+          </button>
+        </article>
+        
+        <article class="card small">
+          <h3>Estruturas de Dados e Algoritmos</h3>
+          <p class="institution">Curso Livre • 60 horas</p>
+          <button class="btn-card btn-view-drive" data-drive-id="ID_DO_CERTIFICADO_2" data-title="Certificado Algoritmos">
+            👁️ Visualizar
           </button>
         </article>
       </div>
@@ -141,6 +177,8 @@
     </section>
 
   </main>
+
+  <!-- RODAPÉ -->
 
   <footer class="main-footer">
     <p>&copy; 2026 Samuel David. Todos os direitos reservados.</p>
