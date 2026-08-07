@@ -4,7 +4,7 @@ Bem-vindo ao repositório do meu portfólio pessoal e acadêmico! Este projeto f
 
 ## 🎯 Objetivo do Projeto
 
-O objetivo principal deste site é servir como um hub central de qualificações. Ele permite que recrutadores, professores e parceiros de projetos visualizem rapidamente minhas experiências e acessem documentos comprobatórios (certificados, diplomas e currículo) diretamente na página, sem a necessidade de downloads manuais ou navegação fora do site.
+O objetivo principal deste site é servir como um hub central de qualificações. Ele permite que recrutadores, professores e parceiros de projetos visualizem rapidamente minhas experiências e acessem documentos como (certificados, diplomas e currículo) diretamente na página, sem a necessidade de downloads manuais.
 
 ## ✨ Funcionalidades Principais
 
