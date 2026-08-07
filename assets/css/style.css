@@ -146,11 +146,11 @@ body {
   align-items: center;
   justify-content: center;
   padding: 8px 8px;
-  border-radius: 20px; /* Bordas suaves em pílula */
+  border-radius: 20px;
   border: 1px solid var(--border-color, #ccc);
   background-color: var(--bg-card, #f8f9fa);
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.30s ease;
 }
 
 .btn-theme-toggle:hover {
