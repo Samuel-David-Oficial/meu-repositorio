@@ -5,43 +5,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggleBtn = document.getElementById('theme-toggle');
   const themeIcon = themeToggleBtn?.querySelector('.theme-icon');
 
-  // Determina o tema inicial (salvo no localStorage ou preferência do sistema)
   const getInitialTheme = () => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      return savedTheme;
-    }
-    // Se não houver preferência salva, verifica o sistema operacional
+    if (savedTheme) return savedTheme;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   };
 
-  // Aplica o tema e atualiza o ícone do botão
-  const applyTheme = (theme) => {
+  // saveInStorage = false previne que a preferência do SO seja sobrescrita ao carregar
+  const applyTheme = (theme, saveInStorage = true) => {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    
+    if (saveInStorage) {
+      localStorage.setItem('theme', theme);
+    }
 
     if (themeIcon) {
-      // Exibe o Sol ☀️ no modo escuro e a Lua 🌙 no modo claro
-      themeIcon.textContent = theme === 'dark' ? 'Claro' : 'Escuro';
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
     }
   };
 
-  // Inicializa o tema na carga da página
+  // Inicializa sem forçar a gravação no localStorage
   let currentTheme = getInitialTheme();
-  applyTheme(currentTheme);
+  applyTheme(currentTheme, false);
 
-  // Evento de clique no botão de alternância
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-      currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      applyTheme(currentTheme);
+      const activeTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme, true);
     });
   }
 
-  // Atualiza se o usuário alterar o tema do sistema operacional enquanto navega
+  // Atualiza se a preferência do sistema mudar (apenas se o usuário não tiver salvado manualmente)
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (!localStorage.getItem('theme')) {
-      applyTheme(e.matches ? 'dark' : 'light');
+      applyTheme(e.matches ? 'dark' : 'light', false);
     }
   });
 
@@ -53,77 +51,65 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalIframe = document.getElementById('modal-iframe');
   const modalTitle = document.getElementById('modal-title');
   const modalCloseBtn = document.getElementById('modal-close');
-
   const driveElements = document.querySelectorAll('.btn-view-drive');
+
+  const closeModal = () => {
+    if (!modal) return;
+    modal.close();
+    if (modalIframe) modalIframe.src = '';
+  };
 
   driveElements.forEach(element => {
     element.addEventListener('click', () => {
-      const driveId = element.getAttribute('data-drive-id');
-      const title = element.getAttribute('data-title') || 'Visualizador de Documento';
-      
+      const driveId = element.dataset.driveId;
+      const title = element.dataset.title || 'Visualizador de Documento';
+
       if (driveId && modal && modalIframe) {
-        // Formata a URL para o modo de preview limpo do iFrame
-        const embedUrl = driveId.startsWith('http') 
-          ? driveId.replace('/view?usp=drive_link', '/preview').replace('/view', '/preview')
+        // Substituição única usando Regex para links do Google Drive
+        const embedUrl = driveId.startsWith('http')
+          ? driveId.replace(/\/view(\?.*)?$/, '/preview')
           : `https://drive.google.com/file/d/${driveId}/preview`;
 
-        modalTitle.textContent = title;
+        if (modalTitle) modalTitle.textContent = title;
         modalIframe.src = embedUrl;
         modal.showModal();
       }
     });
   });
 
-  // Fechar o Modal pelo botão "X"
-  if (modalCloseBtn && modal) {
+  if (modalCloseBtn) {
     modalCloseBtn.addEventListener('click', closeModal);
+  }
 
-    // Fechar ao clicar na área escura fora do modal
+  if (modal) {
+    // Clique fora do conteúdo (no backdrop) fecha o modal
     modal.addEventListener('click', (event) => {
-      const rect = modal.getBoundingClientRect();
-      const isInDialog = (
-        rect.top <= event.clientY &&
-        event.clientY <= rect.top + rect.height &&
-        rect.left <= event.clientX &&
-        event.clientX <= rect.left + rect.width
-      );
-
-      if (!isInDialog) {
+      if (event.target === modal) {
         closeModal();
       }
     });
   }
 
-  function closeModal() {
-    modal.close();
-    modalIframe.src = ''; // Interrompe o carregamento do documento em segundo plano
-  }
-/* ==========================================================================
+
+  /* ==========================================================================
      3. LÓGICA DO MENU MOBILE (HAMBÚRGUER)
      ========================================================================== */
   const menuToggleBtn = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
 
   if (menuToggleBtn && navLinks) {
-    // Abre/Fecha o menu ao clicar no botão
-    menuToggleBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      
-      // Altera o ícone do botão dependendo do estado do menu
-      if (navLinks.classList.contains('active')) {
-        menuToggleBtn.innerHTML = '✖'; // Ícone de Fechar
-      } else {
-        menuToggleBtn.innerHTML = '☰'; // Ícone de Hambúrguer
-      }
-    });
+    // Função auxiliar para evitar duplicação da lógica do menu
+    const toggleMenu = (isOpen) => {
+      const active = isOpen ?? !navLinks.classList.contains('active');
+      navLinks.classList.toggle('active', active);
+      menuToggleBtn.innerHTML = active ? '✖' : '☰';
+      menuToggleBtn.setAttribute('aria-expanded', active);
+    };
 
-    // Fecha o menu automaticamente quando um link é clicado
-    const links = navLinks.querySelectorAll('a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        menuToggleBtn.innerHTML = '☰';
-      });
+    menuToggleBtn.addEventListener('click', () => toggleMenu());
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => toggleMenu(false));
     });
   }
 });

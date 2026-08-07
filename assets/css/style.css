@@ -140,6 +140,28 @@ body {
   color: var(--accent-color);
 }
 
+/* BOTÃO DE TROCA DE TEMA (PERSONALIZADO)*/
+.btn-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8px;
+  border-radius: 20px; /* Bordas suaves em pílula */
+  border: 1px solid var(--border-color, #ccc);
+  background-color: var(--bg-card, #f8f9fa);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-theme-toggle:hover {
+  background-color: var(--bg-hover, #e9ecef);
+}
+
+.theme-icon {
+  font-size: 1.1rem;
+  user-select: none;
+}
+
 /* BOTÃO DE OPÇÕES & DROPDOWN MENU */
 .options-wrapper {
   position: relative;
