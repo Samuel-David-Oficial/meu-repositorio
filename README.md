@@ -4,21 +4,21 @@ Bem-vindo ao repositório do meu portfólio pessoal e acadêmico! Este projeto f
 
 ## 🎯 Objetivo do Projeto
 
-O objetivo principal deste site é servir como um hub central de qualificações. Ele permite que recrutadores, professores e parceiros de projetos visualizem rapidamente minhas experiências e acessem documentos como (certificados, diplomas e currículo) diretamente na página, sem a necessidade de downloads manuais.
+O objetivo principal deste site é servir como um hub central de qualificações. Ele permite que recrutadores, professores e parceiros de projetos visualizem rapidamente minhas experiências e acessem documentos como ( certificados, diplomas e currículo ) diretamente na página, sem a necessidade de downloads manuais.
 
 ## ✨ Funcionalidades Principais
 
-🌗 Alternância de Tema (Dark / Light Mode):
+🌗 Alternância de Tema ( Dark / Light Mode ):
 
 • Suporte nativo a modo claro e escuro com transição suave.
 
 • Salva a preferência do usuário no localStorage.
 
-• Detecta automaticamente a preferência do sistema operacional (prefers-color-scheme).
+• Detecta automaticamente a preferência do sistema operacional ( prefers-color-scheme ).
 
-📄 Visualizador de Documentos Nativo (Google Drive Preview):
+📄 Visualizador de Documentos Nativo ( Google Drive Preview ):
 
-• Modal interativo desenvolvido com a tag HTML5 <dialog>.
+• Modal interativo desenvolvido com a tag HTML5 ( dialog ).
 
 • Transforma links de visualização do Google Drive em previews embutidos via iframe, permitindo a leitura de certificados e do currículo dentro da própria plataforma.
 
@@ -32,17 +32,17 @@ O objetivo principal deste site é servir como um hub central de qualificações
 
 🚀 Navegação Fluida:
 
-• Rolagem suave (scroll-behavior: smooth) para atalhos diretos entre seções.
+• Rolagem suave ( scroll-behavior: smooth ) para atalhos diretos entre seções.
 
 ## 🛠️ Tecnologias Utilizadas
 
-O projeto foi construído utilizando tecnologias nativas (Vanilla Web Stack), garantindo leveza, alta velocidade de carregamento e facilidade de manutenção:
+O projeto foi construído utilizando tecnologias nativas ( Vanilla Web Stack ), garantindo leveza, alta velocidade de carregamento e facilidade de manutenção:
 
-• HTML5 - Estruturação semântica (header, main, section, article, dialog).
+• HTML5 - Estruturação semântica ( header, main, section, article, dialog ).
 
-• CSS3 - Estilização moderna com Variáveis CSS (Design System), CSS Grid, Flexbox e Backdrop Filter.
+• CSS3 - Estilização moderna com Variáveis CSS ( Design System ), CSS Grid, Flexbox e Backdrop Filter.
 
-• JavaScript (ES6+) - Manipulação dinâmica do DOM, gestão de eventos, manipulação de modal e persistência de tema.
+• JavaScript ( ES6+ ) - Manipulação dinâmica do DOM, gestão de eventos, manipulação de modal e persistência de tema.
 
 • Google Fonts - Tipografia padronizada utilizando a família de fontes Inter.
 
@@ -55,7 +55,7 @@ meu-repositorio/
 ├── index.html             # Estrutura principal da página
 └── assets/
     ├── css/
-    │   └── style.css      # Estilos globais, temas (Dark/Light) e media queries
+    │   └── style.css      # Estilos globais, temas ( Dark/Light ) e media queries
     ├── js/
     │   └── main.js        # Lógica de alternância de tema, modal e menu mobile
     └── images/
