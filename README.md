@@ -66,11 +66,11 @@ meu-repositorio/
 
 1. Clone o repositório:
 ```text
-    git clone https://github.com/samergameplay/portfolio.git
+    git clone https://github.com/samergameplay/meu-repositorio
 ```
 2. Acesse a pasta do projeto:
 ```text
-    cd portfolio
+    cd meu-repositorio
 ```
 3. Abra o projeto:
 
